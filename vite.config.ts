@@ -32,5 +32,9 @@ export default defineConfig({
     alias: {
       '@assets': path.join(__dirname, 'src/assets')
     }
+  },
+  build: {
+    // 不超过3kb的资源作为base64格式内联
+    assetsInlineLimit: 3 * 1024
   }
 });

@@ -27,6 +27,7 @@ export default defineConfig({
       generateScopedName: '[name]_[local]_[hash:base64:5]'
     }
   },
+  json: { stringify: true },
   resolve: {
     alias: {
       '@assets': path.join(__dirname, 'src/assets')

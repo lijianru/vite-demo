@@ -4,6 +4,7 @@ import path from 'path';
 import viteEslint from 'vite-plugin-eslint';
 import viteStylelint from 'vite-plugin-stylelint';
 import svgr from 'vite-plugin-svgr';
+import viteImagemin from 'vite-plugin-imagemin';
 
 const variablePath = normalizePath(path.resolve('./src/variable.scss'));
 
@@ -15,7 +16,29 @@ export default defineConfig({
     viteStylelint({
       exclude: ['windicss', 'node_modules']
     }),
-    svgr()
+    svgr(),
+    viteImagemin({
+      // 无损压缩配置，无损压缩下图片质量不会变差
+      optipng: {
+        optimizationLevel: 7
+      },
+      // 有损压缩配置，有损压缩下图片质量可能会变差
+      pngquant: {
+        quality: [0.8, 0.9]
+      },
+      // svg 优化
+      svgo: {
+        plugins: [
+          {
+            name: 'removeViewBox'
+          },
+          {
+            name: 'removeEmptyAttrs',
+            active: false
+          }
+        ]
+      }
+    })
   ],
   css: {
     preprocessorOptions: {

@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint:script": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./",
-    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
+    "lint:script": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./ --ignore-path .gitignore",
+    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\" --ignore-path .gitignore",
     "postinstall": "husky install"
   },
   "lint-staged": {
@@ -60,6 +60,7 @@
     "typescript": "^4.6.4",
     "vite": "^3.0.0",
     "vite-plugin-eslint": "^1.8.0",
-    "vite-plugin-stylelint": "^3.0.7"
+    "vite-plugin-stylelint": "^3.0.7",
+    "vite-plugin-svgr": "^2.2.1"
   }
 }

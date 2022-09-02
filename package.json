@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./ --ignore-path .gitignore",
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\" --ignore-path .gitignore",
+    "prettier": "prettier --write .",
     "postinstall": "husky install"
   },
   "lint-staged": {

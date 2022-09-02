@@ -5,20 +5,24 @@ import NotFound from './pages/NotFound';
 import Navbar from './components/Navbar';
 import { ROUTE_PATH } from './constants/routePath';
 import Team from './pages/Team';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Navbar />
+    <Provider store={store}>
+      <Router>
+        <div>
+          <Navbar />
 
-        <Routes>
-          <Route path={ROUTE_PATH.HOME} element={<Home />} />
-          <Route path={ROUTE_PATH.TEAM} element={<Team />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </Router>
+          <Routes>
+            <Route path={ROUTE_PATH.HOME} element={<Home />} />
+            <Route path={ROUTE_PATH.TEAM} element={<Team />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

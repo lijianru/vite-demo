@@ -1,7 +1,7 @@
 import reactLogo from '@assets/images/react.svg';
 import viteLogo from '@assets/images/vite.svg';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import { Header } from '../../components/Header';
+import { Footer } from '../../components/Footer';
 
 function Home() {
   return (

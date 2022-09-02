@@ -2,12 +2,13 @@ import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
+import { ROUTE_PATH } from '../../constants/routePath';
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'Team', href: '/team', current: false },
-  { name: 'Projects', href: '/projects', current: false },
-  { name: 'Calendar', href: '/calendar', current: false }
+  { name: 'Home', href: ROUTE_PATH.HOME, current: true },
+  { name: 'Team', href: ROUTE_PATH.TEAM, current: false },
+  { name: 'Projects', href: ROUTE_PATH.PROJECTS, current: false },
+  { name: 'Calendar', href: ROUTE_PATH.CALENDAR, current: false }
 ];
 
 function classNames(...classes: string[]) {
